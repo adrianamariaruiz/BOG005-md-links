@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const marked = require('marked')
-const { buscandoMd } = require('./index.js')
+const { buscandoMd } = require('./searchMdFiles.js')
 
 // ME MUESTRA LA RUTA ABSOLUTA
 // console.log(path.resolve('archivo2.txt'))

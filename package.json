@@ -27,6 +27,7 @@
     "nodemon": "^2.0.19"
   },
   "dependencies": {
-    "marked": "^4.1.0"
+    "marked": "^4.1.0",
+    "node-fetch": "^2.6.7"
   }
 }
