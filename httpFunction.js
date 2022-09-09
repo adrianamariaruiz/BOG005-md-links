@@ -33,21 +33,23 @@ const httpFunction = (links) => {
             .then(res => {
                 // console.log(res)
                 if (res.status >= 200 && res.status <= 299) {
-                    console.log(({ status: res.status, OK: res.statusText, href: hrefLinks.href, file: hrefLinks.file, text: hrefLinks.text }))
+                    // console.log(({ status: res.status, OK: res.statusText, href: hrefLinks.href, file: hrefLinks.file, text: hrefLinks.text }))
                     return ({ status: res.status, OK: res.statusText, href: hrefLinks.href, file: hrefLinks.file, text: hrefLinks.text })
                 } else if (res.status >= 400 && res.status <= 499) {
-                    console.log(({ status: res.status, OK: 'Fail', href: hrefLinks.href, file: hrefLinks.file, text: hrefLinks.text }))
+                    // console.log(({ status: res.status, OK: 'Fail', href: hrefLinks.href, file: hrefLinks.file, text: hrefLinks.text }))
                     return ({ status: res.status, OK: 'Fail', href: hrefLinks.href, file: hrefLinks.file, text: hrefLinks.text })
                 }
             })
             .catch(() => {
-                console.log({ status: 404, OK: 'Fail', href: hrefLinks.href, file: hrefLinks.file, text: hrefLinks.text })
+                // console.log({ status: 404, OK: 'Fail', href: hrefLinks.href, file: hrefLinks.file, text: hrefLinks.text })
                 return ({ status: 404, OK: 'Fail', href: hrefLinks.href, file: hrefLinks.file, text: hrefLinks.text })
 
             })
     )
+    // Promise.all(promisesFetch).then((onePromise) => { console.log('tratando de leer onePromise', onePromise) })
 
-    return promisesFetch
+
+    return Promise.all(promisesFetch)
 }
 
 
