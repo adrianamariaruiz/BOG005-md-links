@@ -5,10 +5,10 @@ Es una libreria ejecutable con node.js, donde al ingresar una ruta se leen los a
 # Uso de la aplicación
 
 Para usar el modulo, lo puedes instalar con el siguiente comando desde tu terminal:
-  npm i aruiz-md-links
+  npm i adrianaruiz-md-links
 
 La biblioteca se importa y usa de acuerdo al siguiente ejemplo
-  const {mdLinks} = require('aruiz-md-links')
+  const {mdLinks} = require('adrianaruiz-md-links')
 
 los comandos validos de opciones desde la terminal son:
   --validate
@@ -24,7 +24,7 @@ los comandos validos de opciones desde la terminal son:
   - `--stats`: Si se desea tener información estadística general.
 
 ### Valor de retorno:
-Con `si ingresa solo la ruta (Path)` :
+`si ingresa solo la ruta (Path)` :
 * `href`: URL encontrada.
 * `text`: Texto que aparecía dentro del link (`<a>`).
 * `file`: Ruta del archivo donde se encontró el link.
