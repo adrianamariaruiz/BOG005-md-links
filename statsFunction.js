@@ -21,9 +21,18 @@ const arrayPrueba = [
     }
 ]
 
-const statsFunction = (arrayPrueba) => {
+const stats = (arrayPrueba) => {
     // console.log('probando arrayPrueba', arrayPrueba)
-    // let total = []
+    total = {
+        'Total': arrayPrueba.length,
+        'Unique': new Set(arrayPrueba.map((element) => element.href)).size
+    }
+    // console.log(total)
+    return total
+}
+
+const statsAndValidate = (arrayPrueba) => {
+    // console.log('probando arrayPrueba', arrayPrueba)
     const broken = arrayPrueba.filter((links) => links.OK === 'fail').length;
     total = {
         'Total': arrayPrueba.length,
@@ -37,5 +46,6 @@ const statsFunction = (arrayPrueba) => {
 // statsFunction(arrayPrueba)
 
 module.exports = {
-    statsFunction
+    stats,
+    statsAndValidate
 };

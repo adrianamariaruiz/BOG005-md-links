@@ -1,7 +1,6 @@
 
 const fs = require('fs')
 const path = require('path')
-// const marked = require('marked')
 
 const searchMdFiles = (myPath) => {
   let fileArray = []
@@ -17,7 +16,6 @@ const searchMdFiles = (myPath) => {
   } else {
     fs.readdirSync(myPath).forEach(file => {
       let newPath = path.join(myPath, file)
-      // console.log('prueba newPath: ', newPath)
       if ((fs.statSync(newPath).isDirectory())) {
         fileArray = fileArray.concat(searchMdFiles(newPath))
 
@@ -28,11 +26,9 @@ const searchMdFiles = (myPath) => {
       }
     })
   }
-  // console.log('probando ultimo fileArray', fileArray) /* este es el array de objetos con el {path: 'nombreCarpeta.md'} */
+
   return fileArray
 }
-
-// buscandoMd('probandoMd.md')
 
 module.exports = {
   searchMdFiles
